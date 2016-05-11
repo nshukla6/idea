@@ -16,7 +16,7 @@ var app = express();
 
 
 // all environments
-app.set('port', process.env.PORT || 3000);
+
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(express.favicon());
@@ -45,6 +45,8 @@ app.get('/logout',user.logout);
 app.get('/techStack',routes.techStack);
 
 
-var server=app.listen(app.get('port'),function(req,res){
-    console.log(chalk.green("Catch the action at http://localhost:"+app.get('port')));
+var port = process.env.PORT || 8080;
+
+var server=app.listen(port,function(req,res){
+    console.log(chalk.green("Catch the action at http://localhost:"+port));
 });
