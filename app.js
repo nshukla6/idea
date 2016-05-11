@@ -45,7 +45,7 @@ app.get('/logout',user.logout);
 app.get('/techStack',routes.techStack);
 
 
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 3000;
 
 var server=app.listen(port,function(req,res){
     console.log(chalk.green("Catch the action at http://localhost:"+port));
